@@ -34,7 +34,7 @@ public class TestWithDataGeneration {
             $("[data-test-id=phone] input").setValue(UserOne.getPhoneNumber());
             $("[data-test-id=agreement]").click();
             $$("button").find(exactText("Запланировать")).click();
-            $(withText("Успешно!")).waitUntil(visible, 15000);
+            $(withText("Успешно!")).waitUntil(visible, 17000);
 
             $("[data-test-id=city] input").setValue(deleteInfo);
             $("[data-test-id=city] input").setValue(UserOne.getCity());
@@ -46,9 +46,9 @@ public class TestWithDataGeneration {
             $("[data-test-id=agreement]").click();
 
             $$("button").find(exactText("Запланировать")).click();
-            $(withText("Необходимо подтверждение")).waitUntil(visible, 15000);
+            $(withText("Необходимо подтверждение")).waitUntil(visible, 17000);
             $$("button").find(exactText("Перепланировать")).click();
-            $(withText("Успешно!")).waitUntil(visible, 15000);
+            $(withText("Успешно!")).waitUntil(visible, 17000);
 
 
 
