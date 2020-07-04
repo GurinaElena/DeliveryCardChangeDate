@@ -32,27 +32,26 @@ public class TestForDeliveryCardChangeDate {
 
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue(one.getCity());
-        $("[data-test-id=date] input").setValue(deleteInfo);
+        $("[data-test-id=date] input").sendKeys(deleteInfo);
         $("[data-test-id=date] input").setValue(str);
         $("[data-test-id=name] input").setValue(one.getFullName());
         $("[data-test-id=phone] input").setValue(one.getPhoneNumber());
         $("[data-test-id=agreement]").click();
         $$("button").find(exactText("Запланировать")).click();
-        $(withText("Успешно!")).waitUntil(visible, 15000);
+        $(withText("Успешно!")).waitUntil(visible, 20000);
 
-        $("[data-test-id=city] input").setValue(deleteInfo);
+        $("[data-test-id=city] input").sendKeys(deleteInfo);
         $("[data-test-id=city] input").setValue(one.getCity());
-        $("[data-test-id=name] input").setValue(deleteInfo);
+        $("[data-test-id=name] input").sendKeys(deleteInfo);
         $("[data-test-id=name] input").setValue(one.getFullName());
-        $("[data-test-id=phone] input").setValue(deleteInfo);
+        $("[data-test-id=phone] input").sendKeys(deleteInfo);
         $("[data-test-id=phone] input").setValue(one.getPhoneNumber());
-        $("[data-test-id=agreement]").click();
         $("[data-test-id=agreement]").click();
 
         $$("button").find(exactText("Запланировать")).click();
-        $(withText("Необходимо подтверждение")).waitUntil(visible, 15000);
+        $(withText("Необходимо подтверждение")).waitUntil(visible, 20000);
         $$("button").find(exactText("Перепланировать")).click();
-        $(withText("Успешно!")).waitUntil(visible, 15000);
+        $(withText("Успешно!")).waitUntil(visible, 20000);
 
 
 
