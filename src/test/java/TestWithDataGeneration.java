@@ -28,7 +28,7 @@ public class TestWithDataGeneration {
 
             open("http://localhost:9999");
             $("[data-test-id=city] input").setValue(UserOne.getCity());
-            $("[data-test-id=date] input").setValue(deleteInfo);
+            $("[data-test-id=date] input").sendKeys(deleteInfo);
             $("[data-test-id=date] input").setValue(str);
             $("[data-test-id=name] input").setValue(UserOne.getFullName());
             $("[data-test-id=phone] input").setValue(UserOne.getPhoneNumber());
@@ -36,14 +36,12 @@ public class TestWithDataGeneration {
             $$("button").find(exactText("Запланировать")).click();
             $(withText("Успешно!")).waitUntil(visible, 20000);
 
-            $("[data-test-id=city] input").setValue(deleteInfo);
+            $("[data-test-id=city] input").sendKeys(deleteInfo);
             $("[data-test-id=city] input").setValue(UserOne.getCity());
-            $("[data-test-id=name] input").setValue(deleteInfo);
+            $("[data-test-id=name] input").sendKeys(deleteInfo);
             $("[data-test-id=name] input").setValue(UserOne.getFullName());
-            $("[data-test-id=phone] input").setValue(deleteInfo);
+            $("[data-test-id=phone] input").sendKeys(deleteInfo);
             $("[data-test-id=phone] input").setValue(UserOne.getPhoneNumber());
-            $("[data-test-id=agreement]").click();
-            $("[data-test-id=agreement]").click();
 
             $$("button").find(exactText("Запланировать")).click();
             $(withText("Необходимо подтверждение")).waitUntil(visible, 20000);
